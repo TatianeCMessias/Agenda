@@ -31,7 +31,7 @@ public class TarefaServiceImpl implements TarefaService{
 		return tarefaRepository.findById(id).orElseThrow(NoSuchElementException::new);
 	}
 
-    // Criar uma nova Tarefa
+   
     @Override
     public Tarefa criarTarefa(Long usuarioId, Tarefa tarefa) {
 
@@ -40,8 +40,8 @@ public class TarefaServiceImpl implements TarefaService{
 
 
         tarefa.setUsuario(usuario);
-        tarefa.setDataCriacao(LocalDateTime.now()); // Define a data de criação
-        tarefa.setDataAtualizacao(LocalDateTime.now()); // Define a data de atualização
+        tarefa.setDataCriacao(LocalDateTime.now()); 
+        tarefa.setDataAtualizacao(LocalDateTime.now()); 
 
 
         return tarefaRepository.save(tarefa);
@@ -58,7 +58,7 @@ public class TarefaServiceImpl implements TarefaService{
         tarefaExistente.setTitulo(tarefaAtualizada.getTitulo());
         tarefaExistente.setDescricao(tarefaAtualizada.getDescricao());
         tarefaExistente.setConcluida(tarefaAtualizada.getConcluida());
-        tarefaExistente.setDataAtualizacao(LocalDateTime.now()); // Atualiza a data de atualização
+        tarefaExistente.setDataAtualizacao(LocalDateTime.now()); 
 
 
         return tarefaRepository.save(tarefaExistente);
